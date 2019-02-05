@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+</head>
+<body>
+
+        <% for(var i=0; i<10; i++) {%>
+            <p> <%= i %> </p>
+        <%}%>
+
+
+        <table border="1">
+                <% for(var i=0; i < info.length; i++) { %>
+                   <tr>
+                     <td><%= info[i].id %></td>
+
+                     <td><%= info[i].name %></td>
+                   </tr>
+                <% } %>
+        </table>
+        
+<h2 style="text-align:center">Welcome to your Timeline</h2>
+<p> This is the profile page. </p>
+
+</body>
+</html>
