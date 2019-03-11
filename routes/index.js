@@ -32,6 +32,22 @@ router.post('/books',function(req,res,next){
 	var author=req.body.author;
 
 	console.log(isbnid+' - '+name+' - '+author);
+	var query={};
+
+	Book.findOneAndUpdate(query, {
+    $set: {
+      isbnid:isbnid,
+      name:name,
+      author:author
+    }
+  }, {
+    new: true,
+    upsert: true
+  }, function(err, doc) {
+    if (err) {
+      console.log("Something wrong when updating data!");
+    }});
+
 
 	res.redirect('/books');
 });
