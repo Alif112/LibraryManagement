@@ -14,15 +14,15 @@
   <div class="col-md-4"></div>
   <div class="col-md-4">
     <h2>Add Students </h2>
-    <form class="form-horizontal" action="/students" method="post">
+    <form class="form-horizontal" action="/studentdetails/addstudents" method="post">
       <div class="form-group">
         <label for="id">Student ID:</label>
-        <input type="text" class="form-control"  placeholder="Enter std id" name="stdid">
+        <input type="text" class="form-control"  placeholder="Enter std id" name="stdid" value="<%=info[0].stdid%>">
       </div>
       
       <div class="form-group">
         <label for="Book name">Student Name:</label>
-        <input type="text" class="form-control"  placeholder="Enter std name" name="stdname">
+        <input type="text" class="form-control"  placeholder="Enter std name" name="stdname" value="<%=info[0].stdname%>">
       </div>
 
 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Students</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Details</h2>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Postion</th>
+      <th scope="col">Student ID</th>
+      <th scope="col">Student Name</th>
+      <th scope="col">Edit/Delete</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+
+        <% for(var i=0; i < info.length; i++) { %>
+            <tr>
+                <td># <%= (i+1) %></td>
+                <td><%= info[i].stdid %></td>
+                 <td><%= info[i].stdname %></td>
+                   
+                   <td>
+                    <a class="btn btn-xs btn-warning btn-edit" href="/studentdetails/edit/<%=info[i]._id %>">Edit</a>
+
+                    <a class="btn btn-xs btn-danger btn-delete" href="/studentdetails/delete/<%=info[i]._id %>">Delete</a>
+
+                  </td>
+
+            </tr>
+        <% } %>
+
+
+  </tbody>
+</table>
+
+</div>
+
+
+</body>
+</html>
