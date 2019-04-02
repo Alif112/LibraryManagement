@@ -37,6 +37,7 @@ var options = {
   maxAge: '1d',
 };
 app.use(express.static(path.join(__dirname, 'public')));
+app.use("/public", express.static(path.join(__dirname, 'public')));
 app.use('/studentdetails/edit', express.static(path.join(__dirname, 'public'), options));
 app.use('/studentdetails/delete', express.static(path.join(__dirname, 'public'), options));
 
