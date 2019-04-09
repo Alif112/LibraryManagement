@@ -11,6 +11,7 @@ var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var studentdetailsRouter=require('./routes/studentdetails');
+var teacherdetailsRouter=require('./routes/teacherdetails');
 
 mongoose.set('useCreateIndex', true);
 mongoose.connect('mongodb://localhost/mydb', {
@@ -23,6 +24,8 @@ var app = express();
 // view engine setup
 app.set('views', [path.join(__dirname, 'views'),
                   path.join(__dirname, 'views/studentdetails'),
+                  path.join(__dirname, 'views/teacherdetails'),
+                  path.join(__dirname, 'views/partials'),
 
 ]);
 app.set('view engine', 'ejs');
@@ -40,10 +43,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use("/public", express.static(path.join(__dirname, 'public')));
 app.use('/studentdetails/edit', express.static(path.join(__dirname, 'public'), options));
 app.use('/studentdetails/delete', express.static(path.join(__dirname, 'public'), options));
+app.use('/teacherdetails', express.static(path.join(__dirname, 'public'), options));
 
 
 app.use('/', indexRouter);
 app.use('/studentdetails',studentdetailsRouter);
+app.use('/teacherdetails',teacherdetailsRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
